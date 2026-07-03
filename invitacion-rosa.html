@@ -284,6 +284,12 @@ section{padding:52px 0}
 .card .gs.br{bottom:9px;right:9px; transform:scale(-1,-1)}
 .card .gf{position:absolute; left:50%; transform:translateX(-50%); width:80px; height:20px; color:var(--gold); opacity:.8; pointer-events:none; z-index:2}
 .card .gf.t{top:8px} .card .gf.b{bottom:8px; transform:translateX(-50%) scaleY(-1)}
+/* ramo watercolor sobre cada tarjeta (como la referencia) */
+.card{overflow:visible; margin-top:34px}
+.card .topflora{position:absolute; top:-42px; left:50%; transform:translateX(-50%);
+  width:min(76%,300px); z-index:4; pointer-events:none; filter:drop-shadow(0 7px 9px rgba(140,90,100,.22))}
+.card .gf.t{top:26px}
+.card .cflour{display:none}
 
 /* flores watercolor PNG (esquinas de pantalla) — si existen los archivos */
 .cornerpng{position:fixed; z-index:2; width:min(44vw,250px); pointer-events:none; opacity:.96;
@@ -740,7 +746,10 @@ setInterval(spawn,520);
 const GS='<svg class="gs tl"><use href="#scroll"/></svg><svg class="gs tr"><use href="#scroll"/></svg>'
         +'<svg class="gs bl"><use href="#scroll"/></svg><svg class="gs br"><use href="#scroll"/></svg>'
         +'<svg class="gf t"><use href="#flourish"/></svg><svg class="gf b"><use href="#flourish"/></svg>';
-document.querySelectorAll('.card').forEach(c=>c.insertAdjacentHTML('beforeend',GS));
+document.querySelectorAll('.card').forEach(c=>{
+  c.insertAdjacentHTML('beforeend',GS);
+  c.insertAdjacentHTML('afterbegin','<img class="topflora" src="assets/ramo.png" alt="" onerror="this.remove()">');
+});
 
 /* ============ CARRUSEL ============ */
 (function(){
