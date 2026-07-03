@@ -1,0 +1,31 @@
+FOTOS Y FLORES DE LA INVITACION (version rosa)
+================================================
+
+Pon aqui los archivos con ESTOS NOMBRES EXACTOS (respeta mayusculas/minusculas):
+
+FOTOS DE LA QUINCEAÑERA
+-----------------------
+foto-principal.jpg   -> foto que aparece en el ESPEJO al abrir el sobre
+                        (la del vestido rosa dorado en la puerta del castillo)
+foto1.jpg            -> carrusel de "Recuerdos" (1)
+foto2.jpg            -> carrusel (2)
+foto3.jpg            -> carrusel (3)
+foto4.jpg            -> carrusel (4)
+
+Formato: .jpg (o cambia la extension en el HTML). Vertical (4:5) se ve mejor.
+Peso recomendado: menos de 500 KB cada una (comprime si estan muy pesadas).
+
+FLORES WATERCOLOR (opcional, tipo PNG con fondo transparente)
+-------------------------------------------------------------
+flores1.png          -> ramo esquina superior derecha
+flores2.png          -> ramo esquina inferior izquierda
+
+Si no pones estos PNG, no pasa nada: se usan las flores dibujadas.
+
+CANCION BRIDGERTON (opcional)
+-----------------------------
+bridgerton.mp3       -> si la pones, suena esta en vez del audio de Vocaroo.
+
+--------------------------------------------------------------------
+Cuando pongas las fotos aqui, avisa y actualizo el sitio publicado.
+Mientras no esten, se muestran recuadros con "Foto 1", "Foto 2", etc.
