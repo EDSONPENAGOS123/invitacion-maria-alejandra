@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>María Alejandra · XV Años — Elige versión</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Cinzel:wght@500&family=Cormorant+Garamond:ital@1&family=Great+Vibes&display=swap" rel="stylesheet" />
+<style>
+:root{--gold:#a8874a;--gold-lite:#c9ac72;--ink:#211d16;--cream:#f6efdf;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh; font-family:"Cormorant Garamond",serif; color:var(--ink);
+  background:radial-gradient(120% 90% at 50% 0%, #f1e9d7, #e5dabf 55%, #d6c9a9 100%);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:32px 20px; gap:6px}
+.mono{font-family:"Great Vibes",cursive; font-size:3.4rem; color:var(--ink); line-height:.9}
+.mono span{color:var(--gold);font-size:.6em;vertical-align:middle}
+.name{font-family:"Playfair Display",serif; font-weight:600; font-size:1.5rem; margin-top:6px}
+.sub{font-family:"Cinzel",serif; letter-spacing:.26em; text-transform:uppercase; font-size:.72rem; color:#8a6d38; margin:14px 0 26px}
+.rule{width:120px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:2px auto}
+.opts{display:flex; gap:18px; flex-wrap:wrap; justify-content:center; width:100%; max-width:760px}
+.opt{flex:1 1 180px; max-width:220px; text-decoration:none; color:inherit;
+  border:1px solid rgba(168,135,74,.5); border-radius:16px; overflow:hidden;
+  background:var(--cream); box-shadow:0 14px 34px rgba(60,50,30,.18); transition:transform .2s ease, box-shadow .2s ease}
+.opt:hover{transform:translateY(-4px); box-shadow:0 20px 44px rgba(60,50,30,.26)}
+.swatch{height:150px; display:flex; align-items:center; justify-content:center; position:relative}
+.swatch .card{width:74px; height:96px; border-radius:6px; background:linear-gradient(180deg,#f6efdf,#f1e8d3);
+  box-shadow:0 8px 18px rgba(0,0,0,.3); display:flex; align-items:center; justify-content:center;
+  font-family:"Great Vibes",cursive; font-size:1.4rem; color:var(--ink)}
+.verde .swatch{background:linear-gradient(160deg,#6b6f45,#3f4329)}
+.vino  .swatch{background:radial-gradient(120% 95% at 50% 0%, #7c3340, #611f2c 45%, #431420)}
+.rosa  .swatch{background:radial-gradient(130% 100% at 50% 0%, #fdeeeb, #f5ddd9 45%, #ecc9c7)}
+.rosa  .swatch .card{background:linear-gradient(180deg,#fdf6f0,#f9ece5)}
+.opt .lbl{padding:16px 10px}
+.opt .lbl b{display:block; font-family:"Playfair Display",serif; font-weight:600; font-size:1.2rem}
+.opt .lbl small{font-family:"Cinzel",serif; letter-spacing:.16em; text-transform:uppercase; font-size:.62rem; color:#8a6d38}
+.foot{margin-top:26px; font-style:italic; color:#4b4231; font-size:1rem}
+</style>
+</head>
+<body>
+  <div class="mono">M<span>·</span>A</div>
+  <div class="name">María Alejandra</div>
+  <div class="rule"></div>
+  <div class="sub">Mis Quince Años · Elige el estilo</div>
+
+  <div class="opts">
+    <a class="opt verde" href="invitacion-verde.html">
+      <div class="swatch"><div class="card">M·A</div></div>
+      <div class="lbl"><b>Verde Oliva</b><small>Marfil · Oliva · Dorado</small></div>
+    </a>
+    <a class="opt vino" href="invitacion-vino.html">
+      <div class="swatch"><div class="card">M·A</div></div>
+      <div class="lbl"><b>Vino</b><small>Vino · Crema · Dorado</small></div>
+    </a>
+    <a class="opt rosa" href="invitacion-rosa.html">
+      <div class="swatch"><div class="card">M·A</div></div>
+      <div class="lbl"><b>Rosa Floral</b><small>Rosa · Pastel · Flores</small></div>
+    </a>
+  </div>
+
+  <div class="foot">Toca una versión para abrirla</div>
+</body>
+</html>
