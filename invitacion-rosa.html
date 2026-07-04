@@ -36,7 +36,10 @@
 html{scroll-behavior:smooth}
 body{
   font-family:var(--body); color:var(--ink); overflow-x:hidden;
-  background:#efe6d2 url("assets/fondo.jpg") center top / cover fixed;
+  background:
+    radial-gradient(80% 50% at 50% 0%, rgba(220,185,120,.22), transparent 60%),
+    radial-gradient(130% 100% at 50% 0%, #fbeee9 0%, #f6ddd9 45%, #eecac6 100%);
+  background-attachment:fixed;
 }
 img{max-width:100%;display:block}
 
@@ -146,9 +149,11 @@ body::after{
 .wrap{position:relative; z-index:3; max-width:620px; margin:0 auto; padding:0 22px}
 section{padding:52px 0}
 .card{position:relative;
-  background:rgba(251,245,233,.62);
-  border:none; border-radius:12px; padding:58px 42px;
-  box-shadow:0 10px 30px rgba(120,90,50,.12)}
+  background:rgba(253,247,239,.92);
+  border:none; border-radius:12px; padding:44px 30px;
+  box-shadow:0 12px 30px rgba(150,100,110,.18)}
+.card::before{content:""; position:absolute; inset:9px; border:1.5px solid rgba(194,160,90,.75); border-radius:8px; pointer-events:none; z-index:1}
+.card::after{content:""; position:absolute; inset:13px; border:1px solid rgba(194,160,90,.4); border-radius:6px; pointer-events:none; z-index:1}
 .card .cflour{position:absolute; width:56px; height:56px; opacity:.95}
 .card .cflour.a{top:-16px;left:-14px}
 .card .cflour.b{top:-16px;right:-14px; transform:scaleX(-1)}
@@ -288,14 +293,13 @@ section{padding:52px 0}
 .card .gf{position:absolute; left:50%; transform:translateX(-50%); width:80px; height:20px; color:var(--gold); opacity:.8; pointer-events:none; z-index:2}
 .card .gf.t{top:8px} .card .gf.b{bottom:8px; transform:translateX(-50%) scaleY(-1)}
 /* ramo watercolor sobre cada tarjeta (como la referencia) */
-.card{overflow:visible; margin-top:34px}
-.card .topflora{position:absolute; top:-42px; left:50%; transform:translateX(-50%);
-  width:min(76%,300px); z-index:4; pointer-events:none; filter:drop-shadow(0 7px 9px rgba(140,90,100,.22))}
-.card .gf.t{top:26px}
+.card{overflow:visible; margin-top:12px}
 .card .cflour{display:none}
-/* marco ovalado dorado (imagen) sobre cada tarjeta */
-.card .marco{position:absolute; inset:-6px; width:calc(100% + 12px); height:calc(100% + 12px);
-  object-fit:fill; pointer-events:none; z-index:2; opacity:.92}
+/* flores watercolor en las esquinas de cada tarjeta */
+.card .cornerflor{position:absolute; width:min(28%,96px); height:auto; z-index:3; pointer-events:none;
+  filter:drop-shadow(0 4px 6px rgba(150,100,110,.2))}
+.card .cornerflor.tr{top:-16px; right:-16px}
+.card .cornerflor.bl{bottom:-16px; left:-16px}
 
 /* flores watercolor PNG (esquinas de pantalla) — si existen los archivos */
 .cornerpng{position:fixed; z-index:2; width:min(44vw,250px); pointer-events:none; opacity:.96;
@@ -692,10 +696,9 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
 /* (pétalos/figuras geométricas eliminados) */
 
-/* ============ MARCO OVALADO + RAMO en cada tarjeta ============ */
+/* ============ FLORES EN ESQUINAS de cada tarjeta ============ */
 document.querySelectorAll('.card').forEach(c=>{
-  c.insertAdjacentHTML('beforeend','<img class="marco" src="assets/marco-oval.png" alt="" onerror="this.remove()">');
-  c.insertAdjacentHTML('afterbegin','<img class="topflora" src="assets/ramo.png" alt="" onerror="this.remove()">');
+  c.insertAdjacentHTML('beforeend','<img class="cornerflor tr" src="assets/flores1.png" alt="" onerror="this.remove()"><img class="cornerflor bl" src="assets/flores2.png" alt="" onerror="this.remove()">');
 });
 
 /* ============ CARRUSEL ============ */
