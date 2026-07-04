@@ -29,13 +29,14 @@
   --caps:"Cinzel", serif;
   --script:"Pinyon Script", cursive;
   --script2:"Great Vibes", cursive;
+  --brand:"Bridgerton","Playfair Display",serif;
 }
+@font-face{font-family:"Bridgerton"; src:url("assets/fonts/bridgerton-script.otf") format("opentype"); font-display:swap;}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
   font-family:var(--body); color:var(--ink); overflow-x:hidden;
-  background:radial-gradient(130% 100% at 50% 0%, #fdeeeb 0%, #f5ddd9 45%, #ecc9c7 100%);
-  background-attachment:fixed;
+  background:#efe6d2 url("assets/fondo.jpg") center top / cover fixed;
 }
 img{max-width:100%;display:block}
 
@@ -52,8 +53,8 @@ body::after{
    MARCO + FLORES LATERALES (fijas)
    ============================================================ */
 #decor{position:fixed; inset:0; z-index:1; pointer-events:none}
-#decor .frame{position:absolute; inset:12px; border:1px solid rgba(194,160,90,.5); border-radius:6px}
-#decor .frame::after{content:""; position:absolute; inset:5px; border:1px solid rgba(194,160,90,.28); border-radius:4px}
+#decor .frame{position:absolute; inset:14px; border:2px dotted rgba(120,92,58,.55); border-radius:3px}
+#decor .frame::after{content:""; position:absolute; inset:6px; border:1px solid rgba(120,92,58,.4); border-radius:2px}
 
 #sideflora{position:fixed; inset:0; z-index:1; pointer-events:none}
 .cluster{position:absolute; width:150px; height:150px}
@@ -99,7 +100,7 @@ body::after{
   gap:2px; padding-top:12px; transform:translateY(0); transition:transform 1.1s cubic-bezier(.7,0,.2,1) .45s}
 .letter .crest{width:76px; margin:0 auto}
 .letter .cmono{font-size:1.25rem; top:63%}
-.letter .lname{font-family:var(--script); font-size:1.9rem; color:var(--rose-deep); line-height:1; margin-top:-2px}
+.letter .lname{font-family:var(--brand); font-size:1.7rem; color:var(--rose-deep); line-height:1; margin-top:-2px}
 .letter .lrule{width:60px; height:1px; margin:5px 0; background:linear-gradient(90deg,transparent,var(--gold),transparent)}
 .letter .ln{font-family:var(--caps); letter-spacing:.22em; font-size:.55rem; text-transform:uppercase; color:var(--gold-deep)}
 .env-front{position:absolute; inset:0; z-index:3; border-radius:10px;
@@ -145,9 +146,9 @@ body::after{
 .wrap{position:relative; z-index:3; max-width:620px; margin:0 auto; padding:0 22px}
 section{padding:52px 0}
 .card{position:relative;
-  background:linear-gradient(180deg, rgba(253,246,240,.9), rgba(249,236,229,.9));
-  border:1px solid rgba(207,136,148,.4); border-radius:22px; padding:40px 26px;
-  box-shadow:inset 0 0 0 1px rgba(194,160,90,.18), 0 16px 40px rgba(140,90,100,.16)}
+  background:rgba(251,245,233,.62);
+  border:none; border-radius:12px; padding:58px 42px;
+  box-shadow:0 10px 30px rgba(120,90,50,.12)}
 .card .cflour{position:absolute; width:56px; height:56px; opacity:.95}
 .card .cflour.a{top:-16px;left:-14px}
 .card .cflour.b{top:-16px;right:-14px; transform:scaleX(-1)}
@@ -157,10 +158,9 @@ section{padding:52px 0}
 .reveal{opacity:0; transform:translateY(24px); transition:opacity .9s ease, transform .9s ease}
 .reveal.in{opacity:1; transform:none}
 
-.divider{display:flex; align-items:center; justify-content:center; gap:12px; margin:20px 0; color:var(--rose)}
-.divider::before,.divider::after{content:""; height:1px; width:52px; background:linear-gradient(90deg,transparent,var(--gold))}
-.divider::after{background:linear-gradient(90deg,var(--gold),transparent)}
-.divider svg{width:24px;height:24px}
+.divider{display:flex; align-items:center; justify-content:center; gap:12px; margin:20px 0; color:var(--gold-deep)}
+.divider::before,.divider::after{content:""; height:0; width:64px; border-top:1.5px dotted var(--gold-deep); opacity:.7}
+.divider svg{width:11px;height:11px; opacity:.85}
 
 .stilllife{display:flex; align-items:flex-end; justify-content:center; gap:14px; margin:12px 0 2px}
 .stilllife svg{height:56px; width:auto}
@@ -178,11 +178,14 @@ section{padding:52px 0}
    ============================================================ */
 .hero{text-align:center; padding-top:88px}
 .hero .kicker{font-family:var(--caps); letter-spacing:.34em; text-transform:uppercase; font-size:.7rem; color:var(--rose-deep)}
-.hero .name{font-family:var(--display); font-weight:500; font-size:clamp(2.9rem,14vw,4.6rem); line-height:1.02;
-  color:var(--ink); margin:.08em 0}
+.hero .name{font-family:var(--brand); font-weight:400; font-size:clamp(3.2rem,16vw,5.4rem); line-height:1.06;
+  color:var(--ink); margin:.05em 0}
 .hero .rule{width:130px; height:1px; margin:12px auto; background:linear-gradient(90deg,transparent,var(--gold),transparent)}
 .hero .xv{font-family:var(--caps); letter-spacing:.3em; font-size:.9rem; color:var(--gold-deep)}
 .hero .whistle{font-family:var(--serif); font-style:italic; font-size:1.18rem; color:var(--wine); margin-top:14px}
+.coverlogo{width:min(50vw,200px); height:auto; opacity:.92; margin-bottom:2px}
+.herologo{width:min(42vw,158px); height:auto; margin:2px auto 8px; opacity:.9}
+.accent-peony{width:66px; height:auto; margin:10px auto 2px; opacity:.95; filter:drop-shadow(0 4px 6px rgba(140,90,100,.2))}
 
 .lead{font-family:var(--serif); font-size:1.38rem; line-height:1.62; text-align:center; color:var(--ink-soft)}
 .lead em{color:var(--wine); font-style:italic}
@@ -190,7 +193,7 @@ section{padding:52px 0}
 .parents .lbl{font-family:var(--caps); letter-spacing:.22em; font-size:.64rem; text-transform:uppercase; color:var(--rose-deep); display:block; margin-bottom:8px}
 .parents strong{font-family:var(--display); font-weight:500; font-size:1.18rem; color:var(--ink)}
 
-.stitle{text-align:center; font-family:var(--display); font-weight:500; font-size:1.8rem; color:var(--ink); letter-spacing:.02em}
+.stitle{text-align:center; font-family:var(--brand); font-weight:400; font-size:2.2rem; color:var(--ink); letter-spacing:.02em}
 .slabel{text-align:center; font-family:var(--caps); letter-spacing:.26em; text-transform:uppercase; font-size:.7rem; color:var(--rose-deep); margin-top:6px}
 
 /* countdown */
@@ -290,6 +293,9 @@ section{padding:52px 0}
   width:min(76%,300px); z-index:4; pointer-events:none; filter:drop-shadow(0 7px 9px rgba(140,90,100,.22))}
 .card .gf.t{top:26px}
 .card .cflour{display:none}
+/* marco ovalado dorado (imagen) sobre cada tarjeta */
+.card .marco{position:absolute; inset:-6px; width:calc(100% + 12px); height:calc(100% + 12px);
+  object-fit:fill; pointer-events:none; z-index:2; opacity:.92}
 
 /* flores watercolor PNG (esquinas de pantalla) — si existen los archivos */
 .cornerpng{position:fixed; z-index:2; width:min(44vw,250px); pointer-events:none; opacity:.96;
@@ -425,6 +431,7 @@ section{padding:52px 0}
 
 <!-- ============ SOBRE ============ -->
 <div id="envStage">
+  <img class="coverlogo" src="assets/logo.png" alt="Bridgerton" onerror="this.remove()">
   <div class="sub">Estás cordialmente invitado</div>
   <div class="envelope" id="envelope">
     <div class="env-back"></div>
@@ -446,27 +453,6 @@ section{padding:52px 0}
 
 <!-- ============ DECORACIÓN ============ -->
 <div id="decor"><div class="frame"></div></div>
-<div id="sideflora" aria-hidden="true">
-  <div class="cluster tl">
-    <svg class="lf lf2"><use href="#leaf"/></svg>
-    <svg class="r1"><use href="#rose"/></svg>
-    <svg class="r2"><use href="#rose2"/></svg>
-    <svg class="r3"><use href="#bud"/></svg>
-    <svg class="lf"><use href="#leaf"/></svg>
-  </div>
-  <div class="cluster br">
-    <svg class="lf lf2"><use href="#leaf"/></svg>
-    <svg class="r1"><use href="#rose"/></svg>
-    <svg class="r2"><use href="#rose2"/></svg>
-    <svg class="r3"><use href="#bud"/></svg>
-    <svg class="lf"><use href="#leaf"/></svg>
-  </div>
-</div>
-
-<img class="cornerpng tr" src="assets/flores1.png" alt="" aria-hidden="true" onerror="this.remove()">
-<img class="cornerpng bl" src="assets/flores2.png" alt="" aria-hidden="true" onerror="this.remove()">
-
-<div id="petals" aria-hidden="true"></div>
 
 <!-- ============ MÚSICA ============ -->
 <button id="music" title="Música" aria-label="Música">
@@ -489,25 +475,16 @@ section{padding:52px 0}
       </div>
     </div>
     <div class="kicker reveal">Con la bendición de Dios y mi familia</div>
-    <div class="crest reveal">
-      <svg class="laurel" viewBox="0 0 150 140"><use href="#laurel"/></svg>
-      <div class="cmono">M<span>·</span>A</div>
-    </div>
+    <img class="herologo reveal" src="assets/logo.png" alt="Bridgerton" onerror="this.remove()">
     <div class="name reveal">María<br>Alejandra</div>
     <div class="rule reveal"></div>
     <div class="xv reveal">MIS QUINCE AÑOS</div>
-    <div class="stilllife reveal">
-      <svg style="height:52px"><use href="#leaf"/></svg>
-      <svg style="height:64px"><use href="#rose"/></svg>
-      <svg style="height:52px"><use href="#rose2"/></svg>
-    </div>
+    <img class="accent-peony reveal" src="assets/peonia.png" alt="" onerror="this.remove()">
     <p class="whistle reveal">Queridísimo invitado, se rumora en los salones<br>que se aproxima una velada inolvidable…</p>
   </section>
 
   <section>
     <div class="card reveal">
-      <svg class="cflour a"><use href="#rose"/></svg>
-      <svg class="cflour d"><use href="#rose2"/></svg>
       <p class="lead">
         En el jardín de la vida, algunas flores brillan con luz propia.
         Hoy, entre <em>pétalos, música y luz de vela</em>, celebro el florecer
@@ -588,8 +565,6 @@ section{padding:52px 0}
 
   <section>
     <div class="card reveal itinerary">
-      <svg class="cflour a"><use href="#rose"/></svg>
-      <svg class="cflour d"><use href="#rose2"/></svg>
       <h2 class="stitle">Itinerario</h2>
       <div class="slabel" id="idate">—</div>
       <div class="timeline">
@@ -624,11 +599,7 @@ section{padding:52px 0}
           <div class="ttxt"><b>2:00 am</b><span>Dulces Sueños</span></div>
         </div>
       </div>
-      <div class="stilllife" style="margin-top:16px">
-        <svg class="sm"><use href="#leaf"/></svg>
-        <svg style="height:50px"><use href="#rose"/></svg>
-        <svg class="sm"><use href="#leaf"/></svg>
-      </div>
+      <img class="accent-peony" style="margin-top:14px" src="assets/peonia.png" alt="" onerror="this.remove()">
     </div>
   </section>
 
@@ -719,35 +690,11 @@ setInterval(tick,1000); tick();
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.15});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-/* ============ PÉTALOS ============ */
-const layer=document.getElementById('petals');
-const PETAL='<svg viewBox="0 0 24 24" width="100%" height="100%"><path d="M12 2C8 8 4 10 4 15a8 8 0 0016 0c0-5-4-7-8-13z" fill="%C"/></svg>';
-const colors=['#e8b4bb','#f1cdd2','#cf8894','#c2a05a','#9fae82'];
-function spawn(){
-  const isSpark=Math.random()<.45;
-  const el=document.createElement('div');
-  el.className=isSpark?'spark':'petal';
-  if(!isSpark){
-    el.innerHTML=PETAL.replace('%C',colors[(Math.random()*colors.length)|0]);
-    const sz=9+Math.random()*12; el.style.width=el.style.height=sz+'px';
-  }
-  el.style.left=Math.random()*100+'vw';
-  const dur=8+Math.random()*8;
-  el.style.setProperty('--drift',(Math.random()*160-80)+'px');
-  el.style.setProperty('--spin',(Math.random()*720-360)+'deg');
-  el.style.animation=`fall ${dur}s linear forwards`;
-  el.style.opacity=isSpark?(.45+Math.random()*.4):(.4+Math.random()*.35);
-  layer.appendChild(el);
-  setTimeout(()=>el.remove(),dur*1000);
-}
-setInterval(spawn,520);
+/* (pétalos/figuras geométricas eliminados) */
 
-/* ============ MARCO DORADO en cada tarjeta ============ */
-const GS='<svg class="gs tl"><use href="#scroll"/></svg><svg class="gs tr"><use href="#scroll"/></svg>'
-        +'<svg class="gs bl"><use href="#scroll"/></svg><svg class="gs br"><use href="#scroll"/></svg>'
-        +'<svg class="gf t"><use href="#flourish"/></svg><svg class="gf b"><use href="#flourish"/></svg>';
+/* ============ MARCO OVALADO + RAMO en cada tarjeta ============ */
 document.querySelectorAll('.card').forEach(c=>{
-  c.insertAdjacentHTML('beforeend',GS);
+  c.insertAdjacentHTML('beforeend','<img class="marco" src="assets/marco-oval.png" alt="" onerror="this.remove()">');
   c.insertAdjacentHTML('afterbegin','<img class="topflora" src="assets/ramo.png" alt="" onerror="this.remove()">');
 });
 
