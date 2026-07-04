@@ -296,10 +296,12 @@ section{padding:52px 0}
 .card{overflow:visible; margin-top:12px}
 .card .cflour{display:none}
 /* flores watercolor en las esquinas de cada tarjeta */
-.card .cornerflor{position:absolute; width:min(28%,96px); height:auto; z-index:3; pointer-events:none;
+.card .cornerflor{position:absolute; width:min(24%,82px); height:auto; z-index:3; pointer-events:none;
   filter:drop-shadow(0 4px 6px rgba(150,100,110,.2))}
-.card .cornerflor.tr{top:-16px; right:-16px}
-.card .cornerflor.bl{bottom:-16px; left:-16px}
+.card .cornerflor.tr{top:-22px; right:-20px}
+.card .cornerflor.bl{bottom:-22px; left:-20px}
+.card .cornerflor.tl{top:-22px; left:-20px}
+.card .cornerflor.br{bottom:-22px; right:-20px}
 
 /* flores watercolor PNG (esquinas de pantalla) — si existen los archivos */
 .cornerpng{position:fixed; z-index:2; width:min(44vw,250px); pointer-events:none; opacity:.96;
@@ -696,9 +698,19 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
 /* (pétalos/figuras geométricas eliminados) */
 
-/* ============ FLORES EN ESQUINAS de cada tarjeta ============ */
-document.querySelectorAll('.card').forEach(c=>{
-  c.insertAdjacentHTML('beforeend','<img class="cornerflor tr" src="assets/flores1.png" alt="" onerror="this.remove()"><img class="cornerflor bl" src="assets/flores2.png" alt="" onerror="this.remove()">');
+/* ============ FLORES EN ESQUINAS (variadas por tarjeta) ============ */
+const FLORCFG=[
+  [['tr','flores1'],['bl','flores2']],   // rosas: sup-der + inf-izq
+  [['tl','flores3'],['br','flores4']],   // rosas espejo: sup-izq + inf-der
+  [['tr','flores5'],['bl','peonia']],    // ramo peonia + peonia suelta
+  [['tl','flores5m'],['br','flores2']],  // ramo espejo + rosas
+  [['tr','flores1'],['bl','flores5m']],  // rosas + ramo peonia
+];
+document.querySelectorAll('.card').forEach((c,i)=>{
+  const cfg=FLORCFG[i%FLORCFG.length];
+  let html='';
+  cfg.forEach(([pos,src])=>{ html+='<img class="cornerflor '+pos+'" src="assets/'+src+'.png" alt="" onerror="this.remove()">'; });
+  c.insertAdjacentHTML('beforeend', html);
 });
 
 /* ============ CARRUSEL ============ */
